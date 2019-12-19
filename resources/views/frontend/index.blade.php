@@ -9,7 +9,8 @@
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="css/animate.css">
 	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <base href="{{ asset('frontend') }}/">
 	<!-- Bootstrap  -->
 	<link rel="stylesheet" href="css/bootstrap.css">
 
