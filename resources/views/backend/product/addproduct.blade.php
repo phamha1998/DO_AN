@@ -13,6 +13,7 @@
                 <div class="panel panel-primary">
                     <div class="panel-heading">Thêm sản phẩm</div>
                     <div class="panel-body">
+                        <form method= "post">@csrf
                         <div class="row" style="margin-bottom:40px">
                             <div class="col-xs-8">
                                 <div class="row">
@@ -29,14 +30,17 @@
                                         <div class="form-group">
                                             <label>Mã sản phẩm</label>
                                             <input required type="text" name="product_code" class="form-control">
+                                            {{ showErrors($errors, 'product_code') }}
                                         </div>
                                         <div class="form-group">
                                             <label>Tên sản phẩm</label>
                                             <input required type="text" name="product_name" class="form-control">
+                                            {{ showErrors($errors, 'product_name') }}
                                         </div>
                                         <div class="form-group">
                                             <label>Giá sản phẩm (Giá chung)</label>
                                             <input required type="number" name="product_price" class="form-control">
+                                            {{ showErrors($errors, 'product_price') }}
                                         </div>
 
                                         <div class="form-group">
@@ -175,6 +179,7 @@
                             </div>
                         <div class="clearfix"></div>
                     </div>
+                </form>
                 </div>
 
             </div>
@@ -183,4 +188,7 @@
         <!--/.row-->
     </div>
     
+    @endsection
+    @section('script')
+    @parent
     @endsection

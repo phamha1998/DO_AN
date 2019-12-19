@@ -37,6 +37,7 @@ Route::get('contact','frontend\Homecontroller@getContact' );
 
 //backend
 Route::get('login', 'backend\LoginController@getLogin');
+Route::post('login', 'backend\LoginController@PostLogin');
 Route::group(['prefix' => 'admin'], function () {
     //admin
     Route::get('', 'backend\IndexController@getIndex');
@@ -52,6 +53,7 @@ Route::group(['prefix' => 'admin'], function () {
     //category
     Route::group(['prefix' => 'category'], function () {
         Route::get('', 'backend\CategoryController@getCategory');
+        Route::post('', 'backend\CategoryController@PostCategory');
         Route::get('edit', 'backend\CategoryController@getEditCategory');
         Route::get('editvalue', 'backend\CategoryController@getEditValue');
 
@@ -68,6 +70,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::group(['prefix' => 'product'], function () {
         Route::get('', 'backend\ProductController@getListProduct');
         Route::get('add', 'backend\ProductController@getAddProduct');
+        Route::post('add', 'backend\ProductController@PostAddProduct');
         Route::get('edit', 'backend\ProductController@getEditProduct');
        
         
