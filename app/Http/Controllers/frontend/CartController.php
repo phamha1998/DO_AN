@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\fontend;
+namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class CartController extends Controller
 {
     function getCart () {
-        echo "Đây là trang danh mục";
+      return view('frontend.cart.cart');
 
     }
 }

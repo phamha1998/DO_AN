@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\fontend;
+namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -8,11 +8,11 @@ use Illuminate\Http\Request;
 class ProductController extends Controller
 {
     function getDetail () {
-        echo "Đây là  chi tiết sản phẩm";
+        return view('frontend.product.detail');
 
     }
     function getShop() {
-        echo "Đây shop";
+        return view('frontend.product.shop');
 
     }
 }

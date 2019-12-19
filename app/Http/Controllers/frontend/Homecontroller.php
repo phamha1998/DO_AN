@@ -13,11 +13,11 @@ class Homecontroller extends Controller
 
     }
     function getAbout () {
-        echo "Đây là trang Thoogn tin trang web";
+        return view('frontend.about');
 
     }
     function  getContact() {
-        echo "Đây là trang liên hệ";
+        return view('frontend.contact');
 
     }
 
