@@ -1,6 +1,8 @@
 @extends('frontend.master.master')
 @section('content')
-	
+@section('titile','Trang chủ')
+
+
 
 		<!-- main -->
 		<div id="colorlib-featured-product">
@@ -326,4 +328,3 @@
 		<!-- end main -->
 		@endsection
 
-		

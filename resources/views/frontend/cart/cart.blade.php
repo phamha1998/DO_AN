@@ -1,5 +1,6 @@
 @extends('frontend.master.master')
 @section('content')
+@section('titile','Giỏ hàng')
 		<!-- main -->
 		<div class="colorlib-shop">
 			<div class="container">
@@ -50,7 +51,7 @@
 									<div class="row">
 										<div class="col-md-3"><strong>Color:Red</strong></div>
 										<div class="col-md-3"><strong>Size:XL</strong></div>
-										
+
 									</div>
 								</div>
 							</div>
@@ -85,7 +86,7 @@
 										<div class="row">
 											<div class="col-md-3"><strong>Color:Red</strong></div>
 											<div class="col-md-3"><strong>Size:XL</strong></div>
-											
+
 										</div>
 									</div>
 								</div>
@@ -110,7 +111,7 @@
 									</div>
 								</div>
 							</div>
-					
+
 					</div>
 				</div>
 				<div class="row">
@@ -141,7 +142,7 @@
 		<!-- end main -->
 		@endsection
 
-		
+
 
 		@section('script')
 		@parent

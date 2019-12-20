@@ -1,5 +1,6 @@
 @extends('backend.master.master')
 @section('content')
+@section('titile','Thuộc tính')
 	<!--.main-->
 
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
@@ -31,14 +32,14 @@
 										<a class="edit-attr" href="#"><i class="fas fa-edit"></i></a>
 									</div>
 									<div class="col-md-10 widget-right boxattr">
-										<div class="text-attr">RED 
+										<div class="text-attr">RED
 											<a href="#" class="edit-value"><i class="fas fa-edit"></i></a>
 											<a href="#" class="del-value"><i class="fas fa-times"></i></a>
 										</div>
-									
+
 										<div class="text-attr"><a href="#" class="add-value"><i class="fas fa-plus-circle"></i></i></a></div>
-										
-									</div>		
+
+									</div>
 							</div>
 							<div class="row magrin-attr">
 									<div class="col-md-2 panel-blue widget-left">
@@ -47,17 +48,17 @@
 										<a class="edit-attr" href="#"><i class="fas fa-edit"></i></a>
 									</div>
 									<div class="col-md-10 widget-right boxattr">
-										<div class="text-attr">RED 
+										<div class="text-attr">RED
 											<a href="#" class="edit-value"><i class="fas fa-edit"></i></a>
 											<a href="#" class="del-value"><i class="fas fa-times"></i></a>
 										</div>
-									
+
 										<div class="text-attr"><a href="#" class="add-value"><i class="fas fa-plus-circle"></i></i></a></div>
-										
-									</div>		
+
+									</div>
 							</div>
-							
-							
+
+
 					</div>
 				</div>
 			</div>
@@ -68,4 +69,3 @@
 	<!--/.main-->
 	@endsection
 
-	

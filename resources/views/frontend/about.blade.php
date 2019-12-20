@@ -1,6 +1,7 @@
 @extends('frontend.master.master')
 @section('content')
-	
+@section('titile','Thông tin')
+
 		<!-- main -->
 
 		<div id="colorlib-about">
@@ -108,4 +109,3 @@
 			});
 		</script>
 		@endsection
-		

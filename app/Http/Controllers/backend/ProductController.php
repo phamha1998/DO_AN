@@ -10,18 +10,41 @@ class ProductController extends Controller
 {
     function getAddProduct () {
         return view('backend.product.addproduct');
-            
+
     }
     function  PostAddProduct() {
-        
-            
+
+
     }
     function getEditProduct () {
         return view('backend.product.editproduct');
-            
+
     }
     function getListProduct () {
         return view('backend.product.listproduct');
-            
+
+    }
+    //attr
+    function getAttr () {
+        return view('backend.product.attr');
+
+    }
+    function getEditAttr () {
+        return view('backend.product.editattr');
+
+    }
+    //variant
+    function getAddVariant () {
+        return view('backend.product.addvariant');
+
+    }
+    function getEditVariant () {
+        return view('backend.product.editvariant');
+
+    }
+    //edit-value
+    function getEditValue () {
+        return view('backend.product.editvalue');
+
     }
 }

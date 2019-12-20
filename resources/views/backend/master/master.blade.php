@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Quản trị - Store</title>
+	<title>@yield('titile')</title>
     <!-- css -->
     <base href="{{ asset('backend') }}/">
 	<link href="css/bootstrap.min.css" rel="stylesheet">

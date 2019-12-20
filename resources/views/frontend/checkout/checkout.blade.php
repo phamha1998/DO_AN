@@ -1,5 +1,6 @@
 @extends('frontend.master.master')
 @section('content')
+@section('titile','Thanh toán')
 		<!-- main -->
 
 		<div class="colorlib-shop">

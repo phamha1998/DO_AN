@@ -1,5 +1,6 @@
 @extends('backend.master.master')
 @section('content')
+@section('titile','Chỉnh sửa sản phẩm')
     <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
 
 
@@ -11,7 +12,7 @@
         <!--/.row-->
         <div class="row">
             <div class="col-xs-6 col-md-12 col-lg-12">
-            
+
                     <div class="panel panel-primary">
                         <div class="panel-heading">Sửa sản phẩm Áo khoác nam đẹp (AN01)</div>
                         <div class="panel-body">
@@ -67,7 +68,7 @@
                                         <label>Thông tin</label>
                                         <textarea required name="info" style="width: 100%;height: 100px;">thông tin</textarea>
                                     </div>
-             
+
 
             </div>
             <div class="col-xs-4">
@@ -176,7 +177,7 @@
 
 
 
-    
+
 
         function changeImg(input) {
             //Nếu như tồn thuộc tính file, đồng nghĩa người dùng đã chọn file mới

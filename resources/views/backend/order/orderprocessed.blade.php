@@ -1,5 +1,6 @@
 @extends('backend.master.master')
 @section('content')
+@section('titile','Đơn hàng hoàn thành')
 
 	<!--main-->
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
@@ -21,7 +22,7 @@
 						<div class="bootstrap-table">
 							<div class="table-responsive">
 								<a href="#" class="btn btn-warning"><span class="glyphicon glyphicon-gift"></span>Đơn Chưa xử lý</a>
-								<table class="table table-bordered" style="margin-top:20px;">				
+								<table class="table table-bordered" style="margin-top:20px;">
                                     <thead>
                                         <tr class="bg-primary">
                                             <th>ID</th>
@@ -47,7 +48,7 @@
                                             <td>admin@gmail.com</td>
                                             <td>0906013526</td>
                                             <td>Thường tín , hà nội</td>
-                                            <td>2018-12-06 02:05:30</td>                                                                                
+                                            <td>2018-12-06 02:05:30</td>
                                         </tr>
                                     </tbody>
                                 </table>

@@ -1,5 +1,6 @@
 @extends('backend.master.master')
 @section('content')
+@section('titile','Thêm biến thể sản phẩm')
     <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
         <div class="row">
             <ol class="breadcrumb">
@@ -19,7 +20,7 @@
         <!--/.row-->
         <div class="col-md-12">
             <div class="panel panel-default">
-            
+
                     <div class="panel-heading" align='center'>
                         Giá cho từng biến thể sản phẩm : Áo khoác nam đẹp (AN01)
                     </div>
@@ -71,7 +72,7 @@
                     </div>
                     <div align='right'><button class="btn btn-success" type="submit"> Cập nhật </button> <a class="btn btn-warning"
                             href="admin/product" role="button">Bỏ qua</a></div>
-             
+
             </div>
         </div>
 

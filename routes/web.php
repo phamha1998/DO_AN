@@ -44,27 +44,22 @@ Route::group(['prefix' => 'admin'], function () {
     //comment
     Route::get('comment', 'backend\IndexController@getComment');
     Route::get('editcomment', 'backend\IndexController@getEditComment');
-    //Attr
-    Route::group(['prefix' => 'attr'], function () {
-        Route::get('', 'backend\AttrController@getAttr');
-        Route::get('edit', 'backend\AttrController@getEditAttr');
-        
-    });
+
     //category
     Route::group(['prefix' => 'category'], function () {
         Route::get('', 'backend\CategoryController@getCategory');
         Route::post('', 'backend\CategoryController@PostCategory');
         Route::get('edit', 'backend\CategoryController@getEditCategory');
-        Route::get('editvalue', 'backend\CategoryController@getEditValue');
 
-        
+
+
     });
     //order
     Route::group(['prefix' => 'order'], function () {
         Route::get('', 'backend\OrderController@getOrder');
         Route::get('detail', 'backend\OrderController@getDetailOrder');
         Route::get('processed', 'backend\OrderController@getProcessed');
-        
+
     });
     //product
     Route::group(['prefix' => 'product'], function () {
@@ -72,17 +67,15 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('add', 'backend\ProductController@getAddProduct');
         Route::post('add', 'backend\ProductController@PostAddProduct');
         Route::get('edit', 'backend\ProductController@getEditProduct');
-       
-        
+        //variant
+        Route::get('add-variant', 'backend\ProductController@getAddVariant');
+        Route::get('edit-variant', 'backend\ProductController@getEditVariant');
+        //attr
+        Route::get('detail-attr', 'backend\ProductController@getAttr');
+        Route::get('edit-attr', 'backend\ProductController@getEditAttr');
+        //edit-value
+        Route::get('edit-value', 'backend\ProductController@getEditValue');
     });
-    //variant
-    Route::group(['prefix' => 'variant'], function () {
-        Route::get('add', 'backend\VariantController@getAddVariant');
-        Route::get('edit', 'backend\VariantController@getEditVariant');
-        
-    });
-
-    
 });
 
 
