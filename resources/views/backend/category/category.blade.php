@@ -23,6 +23,7 @@
 			<div class="col-md-12">
 				<div class="panel panel-default">
 					<div class="panel-body">
+						<form method="post">@csrf
 						<div class="row">
 							<div class="col-md-5">
 
@@ -37,20 +38,20 @@
 										<option>---|Áo khoác nữ</option>
 									</select>
 								</div>
-								<form method="post">@csrf
+								
 								<div class="form-group">
 									<label for="">Tên Danh mục</label>
 									<input type="text" class="form-control" name="name" id="" placeholder="Tên danh mục mới">
 									{{ showErrors($errors,'name') }}
 
-									<div class="alert bg-danger" role="alert">
+									{{--  <div class="alert bg-danger" role="alert">
 										<svg class="glyph stroked cancel">
 											<use xlink:href="#stroked-cancel"></use>
 										</svg>Tên danh mục đã tồn tại!<a href="#" class="pull-right"><span class="glyphicon glyphicon-remove"></span></a>
-									</div>
+									</div>  --}}
 								</div>
 								<button type="submit" class="btn btn-primary">Thêm danh mục</button>
-							</form>
+							
 							</div>
 							<div class="col-md-7">
 								<div class="alert bg-success" role="alert">
@@ -99,6 +100,7 @@
 
 								</div>
 							</div>
+						</form>
 						</div>
 					</div>
 				</div>

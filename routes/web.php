@@ -36,11 +36,13 @@ Route::get('contact','frontend\Homecontroller@getContact' );
 
 
 //backend
-Route::get('login', 'backend\LoginController@getLogin');
+Route::get('login', 'backend\LoginController@getLogin')->middleware('CheckLogout');
 Route::post('login', 'backend\LoginController@PostLogin');
-Route::group(['prefix' => 'admin'], function () {
+
+Route::group(['prefix' => 'admin','middleware'=>'CheckLogin'], function () {
     //admin
     Route::get('', 'backend\IndexController@getIndex');
+    Route::get('logout','backend\LoginController@Logout');
     //comment
     Route::get('comment', 'backend\IndexController@getComment');
     Route::get('editcomment', 'backend\IndexController@getEditComment');
@@ -50,6 +52,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('', 'backend\CategoryController@getCategory');
         Route::post('', 'backend\CategoryController@PostCategory');
         Route::get('edit', 'backend\CategoryController@getEditCategory');
+        Route::post('edit', 'backend\CategoryController@PostEditCategory');
 
 
 
@@ -67,6 +70,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('add', 'backend\ProductController@getAddProduct');
         Route::post('add', 'backend\ProductController@PostAddProduct');
         Route::get('edit', 'backend\ProductController@getEditProduct');
+        Route::post('edit', 'backend\ProductController@PostEditProduct');
         //variant
         Route::get('add-variant', 'backend\ProductController@getAddVariant');
         Route::get('edit-variant', 'backend\ProductController@getEditVariant');

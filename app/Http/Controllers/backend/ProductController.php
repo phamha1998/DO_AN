@@ -4,7 +4,7 @@ namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
- use App\Http\Requests\AddProductRequest;
+ use App\Http\Requests\{AddProductRequest,EditProductRequest};
 
 class ProductController extends Controller
 {
@@ -12,7 +12,11 @@ class ProductController extends Controller
         return view('backend.product.addproduct');
 
     }
-    function  PostAddProduct() {
+    function  PostAddProduct(AddProductRequest $r) {
+
+
+    }
+    function  PostEditProduct(EditProductRequest $r) {
 
 
     }
@@ -26,25 +30,25 @@ class ProductController extends Controller
     }
     //attr
     function getAttr () {
-        return view('backend.product.attr');
+        return view('backend.attr.attr');
 
     }
     function getEditAttr () {
-        return view('backend.product.editattr');
+        return view('backend.attr.editattr');
 
     }
     //variant
     function getAddVariant () {
-        return view('backend.product.addvariant');
+        return view('backend.variant.addvariant');
 
     }
     function getEditVariant () {
-        return view('backend.product.editvariant');
+        return view('backend.variant.editvariant');
 
     }
     //edit-value
     function getEditValue () {
-        return view('backend.product.editvalue');
+        return view('backend.variant.editvalue');
 
     }
 }
