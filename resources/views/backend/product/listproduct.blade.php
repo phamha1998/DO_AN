@@ -1,4 +1,7 @@
 @extends('backend.master.master')
+@section('product')
+class="active"
+@endsection
 @section('content')
 @section('titile','Danh sách sản phẩm')
 

@@ -1,4 +1,7 @@
 @extends('backend.master.master')
+@section('order')
+class="active"
+@endsection
 @section('content')
 @section('titile','Đơn hàng')
 
@@ -59,4 +62,4 @@
 
 
 	</div>
-	@section
+	@endsection

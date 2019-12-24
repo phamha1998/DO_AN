@@ -22,6 +22,6 @@ class CheckLogout
             return $next($request);
 
         }
-        
+
     }
 }

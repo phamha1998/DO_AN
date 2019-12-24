@@ -10,7 +10,7 @@ use App\Http\Requests\LoginRequest;
 class LoginController extends Controller
 {
     function getLogin(){
-        
+
         return view('backend.login');
     }
     function PostLogin(LoginRequest $r){
@@ -20,13 +20,13 @@ class LoginController extends Controller
         }else{
             return redirect('login')->withInput();
         }
-        
-        
-        
-        
+
+
+
+
     }
     function Logout(){
         session()->forget('email');
-         redirect('login');
+        return redirect('login');
     }
 }
