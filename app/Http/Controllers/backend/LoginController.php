@@ -1,11 +1,14 @@
 <?php
 
 namespace App\Http\Controllers\backend;
+use Illuminate\Support\Facades\Auth;
 
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\LoginRequest;
+use DB;
+
 
 class LoginController extends Controller
 {
@@ -14,19 +17,22 @@ class LoginController extends Controller
         return view('backend.login');
     }
     function PostLogin(LoginRequest $r){
-        if($r->email=='admin@gmail.com'&&$r->password=='123456'){
-            session()->put('email',$r->email);
-             return redirect('admin');
-        }else{
-            return redirect('login')->withInput();
+        
+        $email=$r->email;
+        $password=$r->password;
+
+        if (Auth::attempt(['email' => $email, 'password' => $password])) {
+            return redirect('admin');
+        } else {
+            return redirect()->back()->withErrors(['email'=>'Email hoặc mật khẩu không chính xác'])->withInput();
         }
 
 
 
 
     }
-    function Logout(){
-        session()->forget('email');
+    function getLogout(){
+        Auth::logout();
         return redirect('login');
     }
 }

@@ -38,12 +38,22 @@ Route::get('contact','frontend\Homecontroller@getContact' );
 //backend
 Route::get('login', 'backend\LoginController@getLogin')->middleware('CheckLogout');
 Route::post('login', 'backend\LoginController@PostLogin');
+Route::get('logout','backend\LoginController@getLogout');
+
 
 Route::group(['prefix' => 'admin','middleware'=>'CheckLogin'], function () {
     //admin
     Route::get('', 'backend\IndexController@getIndex');
-    Route::get('logout','backend\LoginController@Logout');
+    //user
+   Route::group(['prefix' => 'user'], function () {
+    Route::get('', 'backend\UserController@getListUser');
+    Route::get('add', 'backend\UserController@getAddUser');
+    Route::get('edit', 'backend\UserController@getEditUser');
+       
+   });
+    
     //comment
+    
     Route::get('comment', 'backend\IndexController@getComment');
     Route::get('editcomment', 'backend\IndexController@getEditComment');
 

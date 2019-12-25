@@ -27,6 +27,11 @@
 				
 				
 				<div class="panel-body">
+					@if(session('thongbao'))
+					<div class="alert alert-danger" role="alert">
+						<strong>{{ session('thongbao') }}</strong>
+					</div>
+					@endif
 					<form role="form" method="post">@csrf
 						<fieldset>
 							<div class="form-group">
