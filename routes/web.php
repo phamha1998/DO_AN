@@ -62,8 +62,8 @@ Route::group(['prefix' => 'admin','middleware'=>'CheckLogin'], function () {
     Route::group(['prefix' => 'category'], function () {
         Route::get('', 'backend\CategoryController@getCategory');
         Route::post('', 'backend\CategoryController@PostCategory');
-        Route::get('edit', 'backend\CategoryController@getEditCategory');
-        Route::post('edit', 'backend\CategoryController@PostEditCategory');
+        Route::get('edit/{id}', 'backend\CategoryController@getEditCategory');
+        Route::post('edit/{id}', 'backend\CategoryController@PostEditCategory');
 
 
 

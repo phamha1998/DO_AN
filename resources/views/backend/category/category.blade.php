@@ -32,13 +32,13 @@ class="active"
 
 								<div class="form-group">
 									<label for="">Danh mục cha:</label>
-									<select class="form-control" name="" id="">
-										<option>----ROOT----</option>
-										<option>Nam</option>
-										<option>---|Áo khoác nam</option>
-										<option>---|---|Áo khoác nam</option>
-										<option>Nữ</option>
-										<option>---|Áo khoác nữ</option>
+									<select class="form-control" name="parent" id="">
+										<option value="0">----ROOT----</option>
+										{{ GetCategory($category,0,"") }}
+
+										
+										
+										
 									</select>
 								</div>
 
@@ -57,49 +57,18 @@ class="active"
 
 							</div>
 							<div class="col-md-7">
-								<div class="alert bg-success" role="alert">
-									<svg class="glyph stroked checkmark">
-										<use xlink:href="#stroked-checkmark"></use>
-									</svg> Đã thêm danh mục thành công! <a href="#" class="pull-right"><span class="glyphicon glyphicon-remove"></span></a>
+								@if(session('thongbao'))
+								<div class="alert alert-danger" alert-dismissible role="alert">
+									<button type="button" class="close" data-dismiss="alert">&times;</button>
+									<strong>{{ session('thongbao') }}</strong>
 								</div>
+								@endif
 								<h3 style="margin: 0;"><strong>Phân cấp Menu</strong></h3>
 								<div class="vertical-menu">
 									<div class="item-menu active">Danh mục </div>
-									<div class="item-menu"><span>Nam</span>
-										<div class="category-fix">
-											<a class="btn-category btn-primary" href="editcategory.html"><i class="fa fa-edit"></i></a>
-											<a class="btn-category btn-danger" href="#"><i class="fas fa-times"></i></i></a>
-
-										</div>
-									</div>
-									<div class="item-menu"><span>---|Áo khoác Nam</span>
-										<div class="category-fix">
-											<a class="btn-category btn-primary" href="editcategory.html"><i class="fa fa-edit"></i></a>
-											<a class="btn-category btn-danger" href="#"><i class="fas fa-times"></i></i></a>
-
-										</div>
-									</div>
-									<div class="item-menu"><span>---|---|Áo khoác Nam (Dành cho việc mở rộng)</span>
-										<div class="category-fix">
-											<a class="btn-category btn-primary" href="editcategory.html"><i class="fa fa-edit"></i></a>
-											<a class="btn-category btn-danger" href="#"><i class="fas fa-times"></i></i></a>
-
-										</div>
-									</div>
-									<div class="item-menu"><span>Nữ</span>
-										<div class="category-fix">
-											<a class="btn-category btn-primary" href="editcategory.html"><i class="fa fa-edit"></i></a>
-											<a class="btn-category btn-danger" href="#"><i class="fas fa-times"></i></i></a>
-
-										</div>
-									</div>
-									<div class="item-menu"><span>---|Áo khoác Nữ</span>
-										<div class="category-fix">
-											<a class="btn-category btn-primary" href="editcategory.html"><i class="fa fa-edit"></i></a>
-											<a class="btn-category btn-danger" href="#"><i class="fas fa-times"></i></i></a>
-
-										</div>
-									</div>
+									
+									{{ showCate($category,0,"") }}
+									
 
 								</div>
 							</div>

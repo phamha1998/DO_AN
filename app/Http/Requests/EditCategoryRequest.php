@@ -24,7 +24,7 @@ class EditCategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=>'required'
+            'name'=>'required|unique:category,name,'.$this->id.',id',
             
             
             
@@ -33,7 +33,8 @@ class EditCategoryRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required'=>'Vui lòng không để trống tên sản phẩm',
+            'name.required'=>'Vui lòng tên Danh mục',
+            'name.unique'=>'Tên Danh mục không dc trùng'
             
             
             

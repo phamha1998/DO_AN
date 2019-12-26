@@ -24,7 +24,7 @@ class CategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=>'required'
+            'name'=>'required|unique:category,name'
             
             
             
@@ -33,7 +33,8 @@ class CategoryRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required'=>'Vui lòng tên sản phẩm',
+            'name.required'=>'Vui lòng tên Danh mục',
+            'name.unique'=>'Tên Danh mục không dc trùng'
             
             
             
