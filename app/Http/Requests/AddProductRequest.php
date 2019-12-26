@@ -29,8 +29,8 @@ class AddProductRequest extends FormRequest
             'var_name'=>'required',
             'product_price'=>'required|numeric',
             'product_img'=>'img'
-            
-            
+
+
         ];
     }
     public function messages()
@@ -42,9 +42,9 @@ class AddProductRequest extends FormRequest
             'var_name.required'=>'Vui lòng thêm biến thể cho thuộc tính',
             'product_img.img'=>'File ảnh không đúng định dạng',
             'product_price.numeric'=>'Giá sản phẩm phải là số'
-            
-            
-            
+
+
+
         ];
     }
 }

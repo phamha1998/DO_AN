@@ -48,12 +48,13 @@ Route::group(['prefix' => 'admin','middleware'=>'CheckLogin'], function () {
    Route::group(['prefix' => 'user'], function () {
     Route::get('', 'backend\UserController@getListUser');
     Route::get('add', 'backend\UserController@getAddUser');
+    Route::post('add', 'backend\UserController@PostAddUser');
     Route::get('edit', 'backend\UserController@getEditUser');
-       
+
    });
-    
+
     //comment
-    
+
     Route::get('comment', 'backend\IndexController@getComment');
     Route::get('editcomment', 'backend\IndexController@getEditComment');
 

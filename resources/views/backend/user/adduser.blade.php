@@ -21,33 +21,33 @@
 
                             <div class="form-group">
                                 <label>Email</label>
-                                <input type="text" name="email" class="form-control">
-                                {{--  {{showErrors($errors,'email')}}  --}}
+                                <input type="text" name="email" class="form-control" value="{{ old('email') }}">
+                                 {{showErrors($errors,'email')}}
                             </div>
                             <div class="form-group">
                                 <label>password</label>
-                                <input type="text" name="password" class="form-control">
-                                {{--  {{showErrors($errors,'password')}}  --}}
+                                <input type="text" name="password" class="form-control" value="{{ old('password') }}">
+                                 {{showErrors($errors,'password')}}
                             </div>
                             <div class="form-group">
                                 <label>Full name</label>
-                                <input type="full" name="full" class="form-control">
-                                {{--  {{showErrors($errors,'full')}}  --}}
+                                <input type="full" name="full" class="form-control" value="{{ old('full') }}">
+                                 {{showErrors($errors,'full')}}
                             </div>
                             <div class="form-group">
                                 <label>Address</label>
-                                <input type="address" name="address" class="form-control">
+                                <input type="address" name="address" class="form-control" value="{{ old('address') }}">
                                 {{showErrors($errors,'address')}}
                             </div>
                             <div class="form-group">
                                 <label>Phone</label>
-                                <input type="phone" name="phone" class="form-control">
-                                {{--  {{showErrors($errors,'phone')}}  --}}
+                                <input type="phone" name="phone" class="form-control" value="{{ old('phone') }}">
+                                 {{showErrors($errors,'phone')}}
                             </div>
 
                             <div class="form-group">
                                 <label>Level</label>
-                                <select name="level" class="form-control">
+                                <select name="level" class="form-control" >
                                     <option value="1">admin</option>
                                     <option selected value="2">user</option>
                                 </select>
