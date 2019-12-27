@@ -53,7 +53,7 @@
 								<div class="alert alert-danger" role="alert">
 									<strong>{{ session('thongbao') }}</strong>
 								</div>
-									
+
 								@endif
 								<h3 style="margin: 0;"><strong>Phân cấp Menu</strong></h3>
 								<div class="vertical-menu">
@@ -76,7 +76,8 @@
 		</div>
 		<!--/.row-->
 	</div>
-	<!--/.main-->
+    <!--/.main-->
+
 
 <script>
 		$('#calendar').datepicker({});
@@ -94,5 +95,10 @@
 		$(window).on('resize', function () {
 			if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
 		})
-	</script>
+    </script>
+    <script>
+        function Del(name){
+            return confirm('Ban chắc chắn muốn xóa'+name+'?');
+        }
+    </script>
 @endsection

@@ -11,7 +11,7 @@ class CategoryController extends Controller
 {
     function getCategory () {
         $data['category']=category::all();
-     
+
         return view('backend.category.category',$data);
 
 }
@@ -29,7 +29,7 @@ function getEditCategory ($id) {
     $data['cate']=category::find($id);
     $data['category']=category::all();
 
-    
+
     return view('backend.category.editcategory',$data);
 
 }
@@ -42,7 +42,16 @@ function PostEditCategory(EditCategoryRequest $r, $id){
 
 
 
-   
+
+
+
+}
+function DelCategory($id){
+    $cate= category::find($id);
+    $category=category::all();
+    Category::where('parent',$cate->id)->update(["parent"=>"$cate->parent"]);
+        $cate->delete();
+        return redirect('/admin/category')->with('thongbao','Đã xóa thành công');
 
 
 }

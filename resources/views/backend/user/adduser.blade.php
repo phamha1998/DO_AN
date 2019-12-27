@@ -10,6 +10,13 @@
     <!--/.row-->
     <div class="row">
         <div class="col-xs-12 col-md-12 col-lg-12">
+
+            @if (session('thongbao'))
+            <div class="alert alert-danger" role="alert">
+                <strong>{{ session('thongbao') }}</strong>
+            </div>
+
+            @endif
             <div class="panel panel-primary">
                 <div class="panel-heading"><i class="fas fa-user"></i> Thêm thành viên</div>
                 <div class="panel-body">

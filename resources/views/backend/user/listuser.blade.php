@@ -27,11 +27,11 @@
                 <div class="panel-body">
                     <div class="bootstrap-table">
                         <div class="table-responsive">
-                            {{--  @if (session('thongbao'))
+                             @if (session('thongbao'))
                             <div class="alert alert-success" role="alert">
                                 <strong>{{session('thongbao')}}</strong>
                             </div>
-                            @endif  --}}
+                            @endif
 
                             <a href="/admin/user/add" class="btn btn-primary">Thêm Thành viên</a>
                             <table class="table table-bordered" style="margin-top:20px;">
@@ -49,23 +49,23 @@
                                 </thead>
                                 <tbody>
 
-                                    {{--  @foreach ($users as $row)  --}}
+                                     @foreach ($users as $row)
                                     <tr>
-                                        <td>Ho ten</td>
-                                            <td>id</td>
-                                            <td>keke</td>
-                                            <td>dia chi</td>
-                                            <td>so dt</td>
-                                            <td>lien he</td>
+                                        <td>{{ $row->id }}</td>
+                                            <td>{{ $row->email }}</td>
+                                            <td>{{ $row->full }}</td>
+                                            <td>{{ $row->address }}</td>
+                                            <td>{{ $row->phone }}</td>
+                                            <td>{{ $row->level}}</td>
                                             <td>
-                                            <a href="#" class="btn btn-warning"><i class="fa fa-pencil"
+                                            <a href="/admin/user/edit/{{ $row->id }}" class="btn btn-warning"><i class="fa fa-pencil"
                                                         aria-hidden="true"></i> Sửa</a>
                                             <a  href="#" class="btn btn-danger"><i class="fa fa-trash"
                                                         aria-hidden="true"></i> Xóa</a>
                                             </td>
                                         </tr>
 
-                                    {{--  @endforeach  --}}
+                                     @endforeach
 
 
 
@@ -73,7 +73,7 @@
                             </table>
                             <div align='right'>
                                 <ul class="pagination">
-                                  {{--  {{$users->links()}}  --}}
+                                   {{$users->links()}}
                                 </ul>
                             </div>
                         </div>

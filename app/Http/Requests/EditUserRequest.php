@@ -13,7 +13,7 @@ class EditUserRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,7 @@ class EditUserRequest extends FormRequest
     public function rules()
     {
         return [
-            'email'=>'required|email|unique:users,email'.$this->idUser,
+            'email'=>'required|email|unique:users,email,'.$this->idUser,
             'password'=>'required|min:5',
             'full'=>'required',
             'address'=>'required',
@@ -38,6 +38,9 @@ class EditUserRequest extends FormRequest
         return [
             'email.required'=>'Vui lòng nhập email ',
             'email.email'=>'Vui lòng nhập đúng định dạng email ',
+            'email.unique'=>'Email bị trùng ',
+
+
             'password.required'=>'Vui lòng nhập mật khẩu',
             'password.min'=>'Mật khẩu ít nhất 5 ký tự',
             'full.required'=>'Vui lòng nhập tên người dùng',

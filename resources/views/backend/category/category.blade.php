@@ -34,11 +34,11 @@ class="active"
 									<label for="">Danh mục cha:</label>
 									<select class="form-control" name="parent" id="">
 										<option value="0">----ROOT----</option>
-										{{ GetCategory($category,0,"") }}
+										{{ GetCategory($category,0,"","") }}
 
-										
-										
-										
+
+
+
 									</select>
 								</div>
 
@@ -66,9 +66,9 @@ class="active"
 								<h3 style="margin: 0;"><strong>Phân cấp Menu</strong></h3>
 								<div class="vertical-menu">
 									<div class="item-menu active">Danh mục </div>
-									
+
 									{{ showCate($category,0,"") }}
-									
+
 
 								</div>
 							</div>

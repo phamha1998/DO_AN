@@ -49,7 +49,8 @@ Route::group(['prefix' => 'admin','middleware'=>'CheckLogin'], function () {
     Route::get('', 'backend\UserController@getListUser');
     Route::get('add', 'backend\UserController@getAddUser');
     Route::post('add', 'backend\UserController@PostAddUser');
-    Route::get('edit', 'backend\UserController@getEditUser');
+    Route::get('edit/{id}', 'backend\UserController@getEditUser');
+    Route::post('edit/{idUser}', 'backend\UserController@PostEditUser');
 
    });
 
@@ -64,6 +65,7 @@ Route::group(['prefix' => 'admin','middleware'=>'CheckLogin'], function () {
         Route::post('', 'backend\CategoryController@PostCategory');
         Route::get('edit/{id}', 'backend\CategoryController@getEditCategory');
         Route::post('edit/{id}', 'backend\CategoryController@PostEditCategory');
+        Route::get('del/{id}', 'backend\CategoryController@DelCategory');
 
 
 
