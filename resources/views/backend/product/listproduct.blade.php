@@ -51,15 +51,16 @@ class="active"
 										</tr>
 									</thead>
 									<tbody>
-										<tr>
-											<td>1</td>
+                                        @foreach ($products as $row)
+                                        <tr>
+											<td>{{  $row->id }}</td>
 											<td>
 												<div class="row">
-													<div class="col-md-3"><img src="img/ao-khoac.jpg" alt="Áo đẹp" width="100px" class="thumbnail"></div>
+													<div class="col-md-3"><img src="img/{{ $row->img }}" alt="Áo đẹp" width="100px" class="thumbnail"></div>
 													<div class="col-md-9">
-														<p><strong>Mã sản phẩm : SP01</strong></p>
-														<p>Tên sản phẩm :Áo Khoác Bomber Nỉ Xanh Lá Cây AK179</p>
-														<p>Danh mục:Áo khoác nam</p>
+														<p><strong>Mã sản phẩm : {{  $row->product_code }}</strong></p>
+														<p>Tên sản phẩm :{{  $row->name }}</p>
+														<p>Danh mục:Áo khoác Nam</p>
 														<p>size:xl,xxl,</p>
 														<div class="group-color">Màu tuỳ chọn:
 															<div class="product-color" style="background-color: blueviolet;"></div>
@@ -70,36 +71,7 @@ class="active"
 													</div>
 												</div>
 											</td>
-											<td>500.000 VND</td>
-											<td>
-												<a name="" id="" class="btn btn-success" href="#" role="button">Còn hàng</a>
-											</td>
-											<td>Áo Khoác Nam</td>
-											<td>
-												<a href="#" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Sửa</a>
-												<a href="#" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
-											</td>
-										</tr>
-										<tr>
-											<td>1</td>
-											<td>
-												<div class="row">
-													<div class="col-md-3"><img src="img/ao-khoac.jpg" alt="Áo đẹp" width="100px" class="thumbnail"></div>
-													<div class="col-md-9">
-														<p><strong>Mã sản phẩm : SP01</strong></p>
-														<p>Tên sản phẩm :Áo Khoác Bomber Nỉ Xanh Lá Cây AK179</p>
-														<p>Danh mục:Áo khoác nam</p>
-														<p>size:xl,xxl,</p>
-														<div class="group-color">Màu tuỳ chọn:
-															<div class="product-color" style="background-color: blueviolet;"></div>
-															<div class="product-color" style="background-color: brown;"></div>
-															<div class="product-color" style="background-color: darkorange;"></div>
-														</div>
-
-													</div>
-												</div>
-											</td>
-											<td>500.000 VND</td>
+											<td>{{number_format($row->price,0,"",".")  }}VND</td>
 											<td>
 												<a name="" id="" class="btn btn-danger" href="#" role="button">hết hàng</a>
 											</td>
@@ -109,6 +81,9 @@ class="active"
 												<a href="#" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
 											</td>
 										</tr>
+
+                                        @endforeach
+
 
 
 									</tbody>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
  use App\Http\Requests\{AddProductRequest,EditProductRequest};
+ use App\models\product;
 
 class ProductController extends Controller
 {
@@ -25,7 +26,9 @@ class ProductController extends Controller
 
     }
     function getListProduct () {
-        return view('backend.product.listproduct');
+        $data['products']=product::all();
+
+        return view('backend.product.listproduct',$data);
 
     }
     //attr
