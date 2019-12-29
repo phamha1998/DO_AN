@@ -5,12 +5,13 @@ namespace App\Http\Controllers\backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
  use App\Http\Requests\{AddProductRequest,EditProductRequest};
- use App\models\product;
+ use App\models\{product,attribute};
 
 class ProductController extends Controller
 {
     function getAddProduct () {
-        return view('backend.product.addproduct');
+        $data['attrs']=attribute::all();
+        return view('backend.product.addproduct',$data);
 
     }
     function  PostAddProduct(AddProductRequest $r) {
@@ -26,14 +27,18 @@ class ProductController extends Controller
 
     }
     function getListProduct () {
-        $data['products']=product::all();
+        
+        $data['products']=product::paginate(3);
 
         return view('backend.product.listproduct',$data);
 
     }
     //attr
     function getAttr () {
-        return view('backend.attr.attr');
+        $data['attrs']=attribute::all();
+
+
+        return view('backend.attr.attr',$data);
 
     }
     function getEditAttr () {

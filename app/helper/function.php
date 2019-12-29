@@ -34,7 +34,20 @@ function showCate($mang,$parent,$shift){
 		    showCate($mang,$value->id,$shift.'--|');
 
 		}
-	}
+    }
+    
 }
+function attr_values($mang)
+    {
+        $result=array();
+        foreach ($mang as $value) 
+        {
+            $attr=$value->attribute->name;
+            $result[$attr][]=$value->value;
+
+        }
+        return $result;
+        
+    }
 
 

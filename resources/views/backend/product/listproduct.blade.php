@@ -60,22 +60,32 @@ class="active"
 													<div class="col-md-9">
 														<p><strong>Mã sản phẩm : {{  $row->product_code }}</strong></p>
 														<p>Tên sản phẩm :{{  $row->name }}</p>
-														<p>Danh mục:Áo khoác Nam</p>
-														<p>size:xl,xxl,</p>
-														<div class="group-color">Màu tuỳ chọn:
-															<div class="product-color" style="background-color: blueviolet;"></div>
-															<div class="product-color" style="background-color: brown;"></div>
-															<div class="product-color" style="background-color: darkorange;"></div>
-														</div>
+														<p>Danh mục:{{ $row->category->name }}</p>
+														@foreach(attr_values($row->values) as $key=>$value)
+														<p>
+															{{ $key }}:
+															@foreach($value as $item)
+																{{ $item }},
+															@endforeach
+
+														</p>
+														
+														@endforeach
 
 													</div>
 												</div>
 											</td>
 											<td>{{number_format($row->price,0,"",".")  }}VND</td>
 											<td>
+												@if($row->state==1)
+												<a name="" id="" class="btn btn-success" href="#" role="button">Còn Hàng</a>
+
+												@else
 												<a name="" id="" class="btn btn-danger" href="#" role="button">hết hàng</a>
+												@endif
+												
 											</td>
-											<td>Áo Khoác Nam</td>
+											<td>{{ $row->category->name }}</td>
 											<td>
 												<a href="#" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Sửa</a>
 												<a href="#" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
@@ -90,11 +100,7 @@ class="active"
 								</table>
 								<div align='right'>
 									<ul class="pagination">
-										<li class="page-item"><a class="page-link" href="#">Trở lại</a></li>
-										<li class="page-item"><a class="page-link" href="#">1</a></li>
-										<li class="page-item"><a class="page-link" href="#">2</a></li>
-										<li class="page-item"><a class="page-link" href="#">3</a></li>
-										<li class="page-item"><a class="page-link" href="#">tiếp theo</a></li>
+										{{ $products->links() }}
 									</ul>
 								</div>
 							</div>
