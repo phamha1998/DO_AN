@@ -30,7 +30,7 @@
 								<div class="col-md-2 panel-blue widget-left">
 									<strong class="large">{{ $row->name }}</strong>
 									<a class="delete-attr" href="#"><i class="fas fa-times"></i></a>
-									<a class="edit-attr" href="#"><i class="fas fa-edit"></i></a>
+									<a class="edit-attr" href="/admin/product/edit-attr/{{ $row->id }}"><i class="fas fa-edit"></i></a>
 								</div>
 								<div class="col-md-10 widget-right boxattr">
 									

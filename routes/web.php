@@ -89,9 +89,17 @@ Route::group(['prefix' => 'admin','middleware'=>'CheckLogin'], function () {
         Route::get('edit-variant', 'backend\ProductController@getEditVariant');
         //attr
         Route::get('detail-attr', 'backend\ProductController@getAttr');
-        Route::get('edit-attr', 'backend\ProductController@getEditAttr');
+        Route::post('add-attr', 'backend\ProductController@AddAttr');
+
+        
+        Route::get('edit-attr/{id}', 'backend\ProductController@getEditAttr');
+        Route::post('edit-attr/{id}', 'backend\ProductController@PostEditAttr');
+        
+        
         //edit-value
+        Route::post('add-value', 'backend\ProductController@AddValue');
         Route::get('edit-value', 'backend\ProductController@getEditValue');
+       
     });
 });
 

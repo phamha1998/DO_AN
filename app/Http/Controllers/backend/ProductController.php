@@ -4,7 +4,8 @@ namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
- use App\Http\Requests\{AddProductRequest,EditProductRequest};
+ use App\Http\Requests\{AddProductRequest,EditProductRequest,AddAttrRequest,AddValueRequest};
+ use App\Http\Requests\EditAttrRequest;
  use App\models\{product,attribute};
 
 class ProductController extends Controller
@@ -41,8 +42,21 @@ class ProductController extends Controller
         return view('backend.attr.attr',$data);
 
     }
-    function getEditAttr () {
-        return view('backend.attr.editattr');
+    function getEditAttr ($id) {
+        $data['attr']=attribute::find($id);
+
+        return view('backend.attr.editattr',$data);
+
+
+    }
+    function PostEditAttr(EditAttrRequest $r, $id){
+        
+    }
+    
+
+    //attr-post
+    function AddAttr(AddAttrRequest $r){
+        
 
     }
     //variant
@@ -54,9 +68,16 @@ class ProductController extends Controller
         return view('backend.variant.editvariant');
 
     }
+    
+     //add -value
+     function AddValue(AddValueRequest $r){
+
+
+    }
     //edit-value
     function getEditValue () {
         return view('backend.variant.editvalue');
 
     }
+   
 }
