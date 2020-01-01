@@ -49,5 +49,52 @@ function attr_values($mang)
         return $result;
         
     }
+function get_combinations($arrays){
+    $result= array(array());
+    foreach ($arrays as $property => $property_values) {
+        $tmp= array();
+        foreach ($result as $result_item) {
+
+            foreach ($property_values as $property_value) {
+                $tmp[]=array_merge($result_item,array($property=>$property_value));
+
+                
+            }
+        }
+        $result=$tmp;
+    }
+    return  $result;
+
+}
+//hàm check value
+function check_value($product, $value_check){
+    
+    foreach ($product->values as $value) {
+        if($value->id==$value_check){
+            return true;
+        }
+       
+
+        
+    }
+    return false;
+}
+//kiểm tra biến thế
+
+function check_var($product,$array){
+    foreach ($product->variant as $row) {
+        $mang=array();
+        foreach ($row->values as $value) {
+
+           $mang[]=$value->id;
+        }
+        if(array_diff($mang,$array)==NULL){
+            return false;
+
+        }
+    }
+    return true;
+
+}
 
 

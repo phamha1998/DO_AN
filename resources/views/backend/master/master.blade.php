@@ -31,6 +31,8 @@
 	<script src="js/easypiechart-data.js"></script>
 	<script src="js/bootstrap-datepicker.js"></script>
 	<script src="js/chart-data.js"></script>
+	@yield('script_variant')
+	@yield('script_listproduct')
 	<script>
         function changeImg(input) {
             //Nếu như tồn thuộc tính file, đồng nghĩa người dùng đã chọn file mới
@@ -50,7 +52,8 @@
             });
         });
 
-    </script>
+	</script>
+	
 
 </body>
 

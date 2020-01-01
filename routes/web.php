@@ -82,11 +82,15 @@ Route::group(['prefix' => 'admin','middleware'=>'CheckLogin'], function () {
         Route::get('', 'backend\ProductController@getListProduct');
         Route::get('add', 'backend\ProductController@getAddProduct');
         Route::post('add', 'backend\ProductController@PostAddProduct');
-        Route::get('edit', 'backend\ProductController@getEditProduct');
-        Route::post('edit', 'backend\ProductController@PostEditProduct');
+        Route::get('edit/{id}', 'backend\ProductController@getEditProduct');
+        Route::get('del/{id}', 'backend\ProductController@DelProduct');
+        Route::post('edit/{id}', 'backend\ProductController@PostEditProduct');
         //variant
-        Route::get('add-variant', 'backend\ProductController@getAddVariant');
-        Route::get('edit-variant', 'backend\ProductController@getEditVariant');
+        Route::get('add-variant/{id}', 'backend\ProductController@getAddVariant');
+        Route::post('add-variant/{id}', 'backend\ProductController@PostAddVariant');
+        Route::get('edit-variant/{id}', 'backend\ProductController@getEditVariant');
+        Route::post('edit-variant/{id}', 'backend\ProductController@PostEditVariant');
+        Route::get('del-variant/{id}', 'backend\ProductController@DelVariant');
         //attr
         Route::get('detail-attr', 'backend\ProductController@getAttr');
         Route::post('add-attr', 'backend\ProductController@AddAttr');
@@ -94,11 +98,14 @@ Route::group(['prefix' => 'admin','middleware'=>'CheckLogin'], function () {
         
         Route::get('edit-attr/{id}', 'backend\ProductController@getEditAttr');
         Route::post('edit-attr/{id}', 'backend\ProductController@PostEditAttr');
+        Route::get('del-attr/{id}', 'backend\ProductController@DelAttr');
         
         
         //edit-value
         Route::post('add-value', 'backend\ProductController@AddValue');
-        Route::get('edit-value', 'backend\ProductController@getEditValue');
+        Route::get('edit-value/{id}', 'backend\ProductController@getEditValue');
+        Route::get('del-value/{id}', 'backend\ProductController@DelValue');
+        Route::post('edit-value/{id}', 'backend\ProductController@PostEditValue');
        
     });
 });

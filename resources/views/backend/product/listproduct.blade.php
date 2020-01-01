@@ -20,6 +20,9 @@ class="active"
 		<div class="row">
 			<div class="col-lg-12">
 				<h1 class="page-header">Danh sách sản phẩm</h1>
+				
+				
+				
 			</div>
 		</div>
 		<!--/.row-->
@@ -32,11 +35,12 @@ class="active"
 					<div class="panel-body">
 						<div class="bootstrap-table">
 							<div class="table-responsive">
-								<div class="alert bg-success" role="alert">
-									<svg class="glyph stroked checkmark">
-										<use xlink:href="#stroked-checkmark"></use>
-									</svg>Đã thêm thành công<a href="#" class="pull-right"><span class="glyphicon glyphicon-remove"></span></a>
+								@if (session('thongbao'))
+								<div class="alert alert-danger" role="alert">
+									<strong>{{ session('thongbao') }}</strong>
 								</div>
+									
+								@endif
 								<a href="{{ asset('') }}admin/product/add" class="btn btn-primary">Thêm sản phẩm</a>
 								<table class="table table-bordered" style="margin-top:20px;">
 
@@ -87,8 +91,8 @@ class="active"
 											</td>
 											<td>{{ $row->category->name }}</td>
 											<td>
-												<a href="#" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Sửa</a>
-												<a href="#" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
+												<a href="/admin/product/edit/{{ $row->id }}" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Sửa</a>
+												<a  onclick ="return del_pro('{{ $row->name }}')" href="/admin/product/del/{{ $row->id }}" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
 											</td>
 										</tr>
 
@@ -114,5 +118,13 @@ class="active"
 
 			</div>
 			<!--end main-->
+
+			@endsection
+			@section('script_listproduct')
+			<script>
+				function del_pro(name){
+					return confirm('Bạn chắc chắn muốn xóa sản phẩm:'+name);
+				}
+			</script>
 
 			@endsection

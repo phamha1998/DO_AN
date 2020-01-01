@@ -16,22 +16,28 @@
 
 		<!--/.row-->
 		<div class="row col-md-offset-3 ">
-			{{ showErrors($errors,'attr_name') }}
+			
 			<div class="col-md-6">
 			<div class="panel panel-blue">
-				<form method="post">@csrf
+				@if (session('thongbao'))
+				<div class="alert alert-success" role="alert">
+					<strong>{{ session('thongbao') }}</strong>
+				</div>
+					
+				@endif
+				{{ showErrors($errors,'attr_name') }}
 				<div class="panel-heading dark-overlay">Sửa thuộc tính</div>
 				<div class="panel-body">
-					
+					<form method="post">@csrf
 					<div class="form-group">
 					  <label for="">Tên Thuộc tính</label>
 					  <input type="text" name="attr_name" id="" class="form-control" placeholder="" aria-describedby="helpId" value="{{ $attr->name }}">
 
 					</div>
 					<div  align="right"><button class="btn btn-success" type="submit">Sửa</button></div>
-				    
+				</form>
 				</div>
-			</form>
+			
 			</div>
 
 

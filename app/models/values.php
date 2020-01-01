@@ -13,6 +13,7 @@ class values extends Model
    {
        return $this->belongsTo('App\models\attribute', 'attr_id', 'id');
    }
+  
     
 
 }

@@ -18,13 +18,23 @@
 			<div class="col-md-6">
 			<div class="panel panel-blue">
 				<div class="panel-heading dark-overlay">Sửa giá trị của tính</div>
+				{{ showErrors($errors,'value_name') }}
+				@if (session('thongbao'))
+				<div class="alert alert-danger" role="alert">
+					<strong>{{ session('thongbao') }}</strong>
+				</div>
+					
+				@endif
+				
 				<div class="panel-body">
+					<form  method="post">@csrf
 					<div class="form-group">
 					  <label for="">Tên giá trị của thuộc tính</label>
-					  <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+					  <input type="text" name="value_name" id="" class="form-control" placeholder="" aria-describedby="helpId" value="{{ $value->value }}" >
 
 					</div>
 					<div  align="right"><button class="btn btn-success" type="submit">Sửa</button></div>
+				</form>
 				</div>
 			</div>
 

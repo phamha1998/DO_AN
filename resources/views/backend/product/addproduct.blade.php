@@ -12,22 +12,22 @@
         <!--/.row-->
         <div class="row">
             <div class="col-xs-6 col-md-12 col-lg-12">
+                <form  method="post" enctype="multipart/form-data">@csrf
                 <div class="panel panel-primary">
+                    <form action="" method="post" enctype="multipart/form-data"></form>
                     <div class="panel-heading">Thêm sản phẩm</div>
                     <div class="panel-body">
-                        <form  method="post" enctype="multipart/form-data">@csrf
-                            <form action="" method="post"></form>
+                        
+                            
                         <div class="row" style="margin-bottom:40px">
+                            
                             <div class="col-xs-8">
                                 <div class="row">
                                     <div class="col-md-7">
                                         <div class="form-group">
                                             <label>Danh mục</label>
                                             <select name="category" class="form-control">
-                                                <option value='1' selected>Nam</option>
-                                                <option value='3'>---|Áo khoác nam</option>
-                                                <option value='2'>Nữ</option>
-                                                <option value='4'>---|Áo khoác nữ</option>
+                                                {{ GetCategory($categorys,0,"",0) }}
                                             </select>
                                         </div>
                                         <div class="form-group">
@@ -44,6 +44,13 @@
                                             <label>Giá sản phẩm (Giá chung)</label>
                                             <input  type="number" name="product_price" class="form-control">
                                             {{ showErrors($errors, 'product_price') }}
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Sản phẩm có nổi bật</label>
+                                            <select name="featured" class="form-control">
+                                                <option value="0">Không</option>
+                                                <option value="1">Có</option>
+                                            </select>
                                         </div>
 
                                         <div class="form-group">
@@ -68,7 +75,6 @@
                                     <label>Thông tin</label>
                                     <textarea  name="info" style="width: 100%;height: 100px;"></textarea>
                                 </div>
-
                             </div>
                             <div class="col-xs-4">
 
@@ -76,6 +82,12 @@
                                     <div class="panel-body tabs">
                                         <label>Các thuộc Tính <a href="/admin/product/detail-attr"><span class="glyphicon glyphicon-cog"></span>
                                                 Tuỳ chọn</a></label>
+                                                @if (session('thongbao'))
+                                                <div class="alert alert-success" role="alert">
+                                                    <strong>{{ session('thongbao') }}</strong>
+                                                </div>
+                                                    
+                                                @endif
                                                 {{ showErrors($errors,'attr_name') }}
                                                 {{ showErrors($errors,'value_name') }}
                                         <ul class="nav nav-tabs">
@@ -108,8 +120,8 @@
                                                     <tbody>
                                                         <tr>
                                                             @foreach ($attr->values as $item)
-                                                            <td> <input class="form-check-input" type="checkbox" name="attr[17][60]"
-                                                                value="60"> </td>
+                                                            <td> <input class="form-check-input" type="checkbox" name="attr[{{ $attr->id }}][]"
+                                                                value="{{ $item->id }}"> </td>
                                                             @endforeach
                                                           
                                                            
@@ -121,7 +133,7 @@
                                                 <div class="form-group">
                                                     <form action="/admin/product/add-value" method="post">@csrf
                                                     <label for="">Thêm biến thể cho thuộc tính</label>
-                                                    <input type="hidden" name="id_pro" value="17">
+                                                    <input type="hidden" name="attr_id" value="{{ $attr->id }}">
                                                     <input name="value_name" type="text" class="form-control"
                                                         aria-describedby="helpId" placeholder="">
                                                     <div> <button name="add_val" type="submit">Thêm</button></div>
@@ -175,8 +187,9 @@
                                 </div>
                             </div>
                         <div class="clearfix"></div>
-                    </form>
+                    
                     </div>
+                </form>
                 </div>
 
             </div>

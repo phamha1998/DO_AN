@@ -17,6 +17,12 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<h1 class="page-header">Quản lý thuộc tính</h1>
+				@if (session('thongbao'))
+				<div class="alert alert-success" role="alert">
+					<strong>{{ session('thongbao') }}</strong>
+				</div>
+					
+				@endif
 
 			</div>
 		</div>
@@ -29,15 +35,15 @@
 							<div class="row magrin-attr">
 								<div class="col-md-2 panel-blue widget-left">
 									<strong class="large">{{ $row->name }}</strong>
-									<a class="delete-attr" href="#"><i class="fas fa-times"></i></a>
+									<a class="delete-attr" href="/admin/product/del-attr/{{ $row->id }}"><i class="fas fa-times"></i></a>
 									<a class="edit-attr" href="/admin/product/edit-attr/{{ $row->id }}"><i class="fas fa-edit"></i></a>
 								</div>
 								<div class="col-md-10 widget-right boxattr">
 									
 									@foreach ($row->values as $item)
 									<div class="text-attr">{{ $item->value }}
-										<a href="#" class="edit-value"><i class="fas fa-edit"></i></a>
-										<a href="#" class="del-value"><i class="fas fa-times"></i></a>
+										<a href="/admin/product/edit-value/{{ $item->id }}" class="edit-value"><i class="fas fa-edit"></i></a>
+										<a href="/admin/product/del-value/{{ $item->id }}" class="del-value"><i class="fas fa-times"></i></a>
 									</div>
 										
 									@endforeach
