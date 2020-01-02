@@ -11,9 +11,5 @@ class CheckoutController extends Controller
        return view('frontend.checkout.checkout');
 
     }
-    function getComplete () {
-        return view('frontend.checkout.complete');
-
-    }
-}
+    
 

@@ -6,11 +6,11 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>@yield('titile')</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<base href="{{ asset('frontend') }}/">
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="css/animate.css">
 	<!-- Icomoon Icon Fonts-->
-    <link rel="stylesheet" href="css/icomoon.css">
-    <base href="{{ asset('frontend') }}/">
+	<link rel="stylesheet" href="css/icomoon.css">
 	<!-- Bootstrap  -->
 	<link rel="stylesheet" href="css/bootstrap.css">
 
@@ -78,6 +78,7 @@
 	<script src="js/jquery.stellar.min.js"></script>
 	<!-- Main -->
 	<script src="js/main.js"></script>
+	@yield('script_detail')
 
 </body>
 

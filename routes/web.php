@@ -14,24 +14,29 @@ use Illuminate\Routing\RouteGroup;
 
 //fontends
 Route::get('', 'frontend\HomeController@getIndex');
-//cart
-Route::group(['prefix' => 'cart'], function () {
-    Route::get('','frontend\CartController@getCart' );
-});
-//Product
-Route::group(['prefix' => 'product'], function () {
-    Route::get('detail','frontend\ProductController@getDetail' );
-    Route::get('shop','frontend\ProductController@getShop' );
-});
-//checkout
-Route::group(['prefix' => 'checkout'], function () {
-    Route::get('','frontend\CheckoutController@getCheckout' );
-    Route::get('complete','frontend\CheckoutController@getComplete' );
-});
 //About
 Route::get('about','frontend\Homecontroller@getAbout' );
 //Contact
 Route::get('contact','frontend\Homecontroller@getContact' );
+
+
+//Product
+Route::group(['prefix' => 'product'], function () {
+    Route::get('','frontend\ProductController@ListProduct' );
+
+    Route::get('detail/{id}','frontend\ProductController@getDetail' );
+    
+    Route::get('addcart','frontend\CartController@getAddCart' );
+   
+    Route::get('cart','frontend\CartController@getCart' );
+    
+    Route::get('checkout','frontend\CheckoutController@getCheckout' );
+});
+//checkout
+Route::group(['prefix' => 'checkout'], function () {
+   
+    Route::get('complete','frontend\ProductController@getComplete' );
+});
 
 
 
